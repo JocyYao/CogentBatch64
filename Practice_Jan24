@@ -1,0 +1,55 @@
+import java.io.*;
+import java.text.Collator;
+import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+
+public class Jan24_Question {
+
+	
+	public static void main(String args[])
+	{
+	    int arr[]={111, 13, 25, 9, 34, 1};
+	    sor(arr);
+	    System.out.println(anagram("sdfsdfdsbsdkg", "sfbhjwefwjebfwe"));
+	    
+	    
+	}
+	
+	public static void sor(int [] arr) {
+		int n=arr.length;
+		 
+	    Arrays.sort(arr);
+	   
+	    System.out.println("Second smallest element is "+arr[1]);
+	    System.out.println("second Largest element is "+arr[n-2]);
+		
+	}
+	
+	
+	public static boolean anagram(String s1, String s2)  {
+		char[] arr1 = s1.toCharArray();
+		char[] arr2 = s1.toCharArray();
+		List<Character> lis1 = new ArrayList<>();
+		List<Character> lis2 = new ArrayList<>();
+		for (char i: arr1)
+		{
+			lis1.add(i);
+		}
+		for (char i: arr2)
+		{
+			lis2.add(i);
+		}
+		
+		Collections.sort(lis1); 
+		Collections.sort(lis2);
+		if (lis1 == lis2){
+			return true;
+					
+		}else {
+			return false;
+		}
+
+	}
+	
+}
